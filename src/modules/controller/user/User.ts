@@ -7,8 +7,18 @@ export class User {
         return user
     }
     async new(data: UserDTO) {
+        const emailExits = await prisma.user.findUnique({
+            where: {
+                email: data.email
+            }
+        })
+        if (!emailExits) {
+            const user = await prisma.user.create({
+                data
+            })
+            return user
+        }
+        return { "erro": "Email já exite em nossa base de dados" }
 
-        const user = await prisma.user.create({ data })
-        return user
     }
 }

@@ -4,5 +4,5 @@ export interface UserDTO {
     alias?: string;
     status?: string;
     age?: number;
-    level?: number;
+    level: number;
 }
