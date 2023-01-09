@@ -9,14 +9,13 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ) {
-    const data = await user.new({
-        "name": "ismael strey pereira 11",
-        "email": "ddddddaa@dev.com",
-        "age": 35,
-        "alias": "ismaelstrey",
-        "level": 1,
-        "status": "on"
-    })
 
-    res.status(200).json(data)
+
+    if (req.method === "POST") {
+        const { body } = req
+        const data = await user.new(body)
+        res.status(200).json(data)
+    }
+    return res.status(200).json({ "message": "Method Get" })
+
 }
