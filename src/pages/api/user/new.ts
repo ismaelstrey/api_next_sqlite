@@ -10,12 +10,14 @@ export default async function handler(
     res: NextApiResponse<UserDTO[]>
 ) {
     const data = await user.new({
-        "name": "ismael strey pereira 10",
-        "email": "dd@dev.com",
-        "age": 35,
-        "alias": "ismaelstrey",
-        "level": 1,
-        "status": "on"
+        data: {
+            "name": "ismael strey pereira 10",
+            "email": "dd@dev.com",
+            "age": 35,
+            "alias": "ismaelstrey",
+            "level": 1,
+            "status": "on"
+        }
     })
 
     res.status(200).json(data)
