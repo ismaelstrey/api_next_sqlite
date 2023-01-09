@@ -1,0 +1,11 @@
+{
+    "sqltools.useNodeRuntime": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "local",
+            "database": "C:\\Users\\Ismael\\Documents\\my_next_tsc\\prisma\\dev.sqlite"
+        }
+    ]
+}
